@@ -37,11 +37,11 @@ const Inputs = ({ user, socket, setChat }) => {
   };
 
   return (
-    <div className="w-full fixed bottom-0 left-0 bg-gradient-to-r from-indigo-900 via-slate-900 to-blue-900 py-4 px-3 flex items-center justify-center shadow-[0_-2px_15px_rgba(0,0,0,0.4)] md:relative">
+    <div className="w-full fixed bottom-0 left-0 bg-[#1a1a1d] py-3 px-4 border-t border-[#2a2a2d] flex items-center justify-center md:relative">
       <div className="flex items-center w-full max-w-3xl gap-3">
         <input
           type="text"
-          className="flex-grow bg-white/15 text-white placeholder-gray-400 text-lg md:text-xl py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all"
+          className="flex-grow bg-[#2a2a2d] text-gray-100 placeholder-gray-500 text-lg md:text-xl py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           placeholder="Type a message..."
           value={input}
           onChange={userTyping}
@@ -57,18 +57,18 @@ const Inputs = ({ user, socket, setChat }) => {
 
         <button
           onClick={sendMessage}
-          className={`rounded-2xl p-3 md:p-4 transition-all duration-300 flex items-center justify-center shadow-md ${
+          className={`rounded-lg p-3 md:p-4 transition-all duration-200 flex items-center justify-center ${
             input
-              ? "bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400"
-              : "bg-slate-600 hover:bg-slate-500"
+              ? "bg-blue-600 hover:bg-blue-500"
+              : "bg-[#3a3a3d] hover:bg-[#4a4a4d]"
           }`}
         >
           <Image
             src={input ? send : upload}
             alt="send"
-            height={28}
-            width={28}
-            className="md:w-8 w-6 invert"
+            height={26}
+            width={26}
+            className="invert"
           />
         </button>
       </div>
